@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+main {
+    padding: 1rem;
+}
+
+/* Styling for the main library manager section */
+#library-manager {
+    margin-top: 2rem;
+  }
+  
+  /* Right Section: Add a Book */
+  #add-book-section {
+    padding: 1rem;
+  }
+  
+  /* Vertical Divider Line */
+  .vertical-line {
+    width: 2px;
+    height: 100%;
+    background-color: #ccc; /* Light gray line */
+  }
+  
+
+h2 {
+    color: #6200ea;
+    text-align: center;
+}
+
+.input-group.mb-3 {
+    border: 2px solid grey; 
+    border-radius: 5px;
+}
+
+/* Remove width and margin-left styling to avoid conflicts */
+.btn.btn-dark {
+    padding: 0.5rem 1rem;
+}
+#pdf-upload {
+    padding: 0.5rem;
+  }
+  
+  .input-group.mb-3 input[type="file"] {
+    border: 2px solid grey;
+    border-radius: 5px;
+  }
+
+  #left-section {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-right: 2px solid #ccc; /* Enhances the divider */
+  }
+  
+  /* Recently Opened Section */
+.recently-opened-container {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.recently-opened-container .book-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.recently-opened-container img {
+  width: 40px;
+  height: 40px;
+  margin-right: 0.5rem;
+}
+  
+  /* My Library Categories */
+  #library-categories ul {
+    padding: 0;
+    margin-top: 1rem;
+  }
+  
+  #library-categories li {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+  }
+
+  .library-categories li:hover {
+    background-color: #e9ecef;
+    border-radius: 5px;
+  }
+  
+  .library-categories .book-list {
+    margin-left: 1rem;
+    display: none; /* Initially hidden */
+  }
+
+  /* Recently Opened Section */
+.book-item img {
+  width: 40px;
+  height: 40px;
+}
+
+.book-item a {
+  text-decoration: none;
+}
+
+.book-item a:hover {
+  text-decoration: underline;
+}
+
+/* Library Categories */
+.book-list img {
+  width: 20px;
+  height: 20px;
+}
+
+.book-list a {
+  text-decoration: none;
+}
+
+.book-list a:hover {
+  text-decoration: underline;
+}

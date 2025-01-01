@@ -9,7 +9,7 @@ const app = express();
 const PORT = 5000;
 
 
-//middleware
+
 app.use(bodyparser.json());
 app.use(cors());
 app.use("/uploads", express.static("uploads"));
@@ -34,7 +34,7 @@ mongoose.connect("mongodb://localhost:27017/digital-library", {
     },
   });
   
-  // Initialize multer
+
   const upload = multer({
     storage,
     limits: { fileSize: 40 * 1024 * 1024 },

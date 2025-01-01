@@ -4,7 +4,7 @@ const Book = require("../models/Book");
 
 
 module.exports = (upload) => {
-  // Add a Book with File Upload
+  
   router.post("/", upload.single("file"), async (req, res) => {
     try {
       console.log("Request body:", req.body);
@@ -29,7 +29,7 @@ module.exports = (upload) => {
     }
   });
 
-  // Get All Books
+  
   router.get("/", async (req, res) => {
     try {
       const books = await Book.find();
@@ -39,7 +39,7 @@ module.exports = (upload) => {
     }
   });
 
-  // Get Books by Category
+ 
  router.get("/category/:category", async (req, res) => {
   try {
     const books = await Book.find({ category: req.params.category });

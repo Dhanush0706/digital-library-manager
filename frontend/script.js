@@ -37,7 +37,7 @@ function updateRecentlyOpened(books) {
   if (books.length === 0) {
     recentlyOpenedSection.innerHTML = '<p class="text-muted text-center">No recent books</p>';
   } else {
-    // Display books in LIFO order (newest first)
+    
     books.forEach((book) => {
       const bookItem = document.createElement("div");
       bookItem.className = "book-item d-flex align-items-center mb-2";
@@ -53,7 +53,7 @@ function updateRecentlyOpened(books) {
   }
 }
 
-// Update Library Categories Section
+
 function updateLibraryCategories(books) {
   const libraryCategories = {};
   books.forEach((book) => {
@@ -64,7 +64,7 @@ function updateLibraryCategories(books) {
   });
 
   const libraryCategoriesList = document.getElementById("library-categories").querySelector("ul");
-  libraryCategoriesList.innerHTML = ""; // Clear existing content
+  libraryCategoriesList.innerHTML = ""; 
 
   Object.entries(libraryCategories).forEach(([category, books]) => {
     const categoryItem = document.createElement("li");
@@ -80,15 +80,15 @@ function updateLibraryCategories(books) {
         <a href="${book.fileUrl}" target="_blank" class="text-dark">${book.title}</a>
       `;
 
-  // Track book click as "recently opened"
+  
   bookItem.addEventListener("click", () => {
-     // Remove the book if it already exists in the list
+    
      recentlyOpenedBooks = recentlyOpenedBooks.filter((b) => b.title !== book.title);
 
-     // Add the book to the beginning of the list (LIFO behavior)
+     
      recentlyOpenedBooks.unshift(book);
 
-     // Keep only the 5 most recent books
+     
      if (recentlyOpenedBooks.length > 5) {
        recentlyOpenedBooks.pop();
      }
@@ -123,7 +123,7 @@ function addSearchFunctionality(books) {
   });
 }
 
-// Infinite Scroll or Pagination for Library Categories
+
 function setupPagination() {
   let currentPage = 1;
   const itemsPerPage = 10;
@@ -151,7 +151,7 @@ function setupPagination() {
 }
 
 
-// Handle Form Submission
+
 async function handleFormSubmit() {
   const title = document.getElementById("title-input").value.trim();
   const category = document.getElementById("category-select").value;
@@ -175,7 +175,7 @@ async function handleFormSubmit() {
 
     if (response.ok) {
       alert("Book added successfully!");
-      fetchBooks(); // Refresh the book list
+      fetchBooks(); 
     } else {
       const errorData = await response.json();
       throw new Error(errorData.error || "Failed to add the book.");
@@ -184,16 +184,16 @@ async function handleFormSubmit() {
     alert(error.message);
   }
 
-  // Reset the form
+  
   document.getElementById("title-input").value = "";
   document.getElementById("category-select").value = "";
   document.getElementById("pdf-upload").value = "";
 }
 
-// Add Event Listener to Submit Button
+
 document.getElementById("submit-btn").addEventListener("click", handleFormSubmit);
 
-// Initialize the Page
+
 fetchBooks();
 setupPagination();
 
